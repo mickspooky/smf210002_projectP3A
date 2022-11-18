@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class WeaponWheelButtonControler : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class WeaponWheelButtonControler : MonoBehaviour
     public Image selectedItem;
     private bool selected = false;
     public Sprite Icon;
+    public string itemName;
+    public TextMeshProUGUI itemText;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,7 @@ public class WeaponWheelButtonControler : MonoBehaviour
         if (selected)
         {
             selectedItem.sprite = Icon;
+            itemText.text = itemName;
         }
     }
 
@@ -41,10 +45,12 @@ public class WeaponWheelButtonControler : MonoBehaviour
     public void HoverEnter()
     {
         anim.SetBool("Hover", true);
+        itemText.text = itemName;
     }
 
     public void HoverExit()
     {
         anim.SetBool("Hover", false);
+        itemText.text = "";
     }
 }

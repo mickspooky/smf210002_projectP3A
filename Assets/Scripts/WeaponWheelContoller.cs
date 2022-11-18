@@ -33,6 +33,24 @@ public class WeaponWheelContoller : MonoBehaviour
             case 0: //nothing is selcted
                 selectedItem.sprite = noImage;
                 break;
+            case 1: //Fists
+                Debug.Log("Fists");
+                break;
+            case 2: //Pistol
+                Debug.Log("Pistol");
+                break;
+            case 3: //Shotgun
+                Debug.Log("Shotgun");
+                break;
+            case 4: //Riffle
+                Debug.Log("Riffle");
+                break;
+            case 5: //Rocket Launcher
+                Debug.Log("Rocket Launcher");
+                break;
+            case 6: //Chainsaw
+                Debug.Log("Chainsaw");
+                break;
         }
 
 
