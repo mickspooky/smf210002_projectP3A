@@ -14,10 +14,13 @@ public class WeaponWheelButtonControler : MonoBehaviour
     public Sprite Icon;
     public string itemName;
     public TextMeshProUGUI itemText;
+    AudioSource mySound;
+    
 
     // Start is called before the first frame update
     void Start()
     {
+        
         anim = GetComponent<Animator>();
     }
 
@@ -44,6 +47,8 @@ public class WeaponWheelButtonControler : MonoBehaviour
 
     public void HoverEnter()
     {
+        mySound = GetComponent<AudioSource>();
+        mySound.Play();
         anim.SetBool("Hover", true);
         itemText.text = itemName;
     }
