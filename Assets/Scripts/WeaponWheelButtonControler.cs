@@ -15,6 +15,7 @@ public class WeaponWheelButtonControler : MonoBehaviour
     public string itemName;
     public TextMeshProUGUI itemText;
     AudioSource mySound;
+    public Text weaponText;
     
 
     // Start is called before the first frame update
@@ -32,10 +33,12 @@ public class WeaponWheelButtonControler : MonoBehaviour
             selectedItem.sprite = Icon;
             itemText.text = itemName;
         }
+       
     }
 
     public void Selected()
     {
+        
         selected = true;
         WeaponWheelContoller.weaponID = ID;
     }
@@ -50,7 +53,7 @@ public class WeaponWheelButtonControler : MonoBehaviour
         mySound = GetComponent<AudioSource>();
         mySound.Play();
         anim.SetBool("Hover", true);
-        itemText.text = itemName;
+        //itemText.text = itemName;
     }
 
     public void HoverExit()
