@@ -14,14 +14,17 @@ public class WeaponWheelButtonControler : MonoBehaviour
     public Sprite Icon;
     public string itemName;
     public TextMeshProUGUI itemText;
+    public TextMeshProUGUI ammoText;
+    public string ammoNumber;
     AudioSource mySound;
-    public Text weaponText;
+    
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        itemText.text = "";
         anim = GetComponent<Animator>();
     }
 
@@ -30,8 +33,9 @@ public class WeaponWheelButtonControler : MonoBehaviour
     {
         if (selected)
         {
-            selectedItem.sprite = Icon;
+            //selectedItem.sprite = Icon;
             itemText.text = itemName;
+            ammoText.text = ammoNumber;
         }
        
     }
@@ -46,6 +50,8 @@ public class WeaponWheelButtonControler : MonoBehaviour
     {
         selected = false;
         WeaponWheelContoller.weaponID = 0;
+        itemText.text = "";
+        ammoText.text = "";
     }
 
     public void HoverEnter()

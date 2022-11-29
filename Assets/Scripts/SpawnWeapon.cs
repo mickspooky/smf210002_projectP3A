@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 //using UnityEngine.UIElements;
@@ -14,8 +15,10 @@ public class SpawnWeapon : MonoBehaviour
     public GameObject[] Weapons;
     public GameObject currentWeapon;
     public static SpawnWeapon instance;
+    public TextMeshProUGUI itemText;
+    public string itemName;
 
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -41,9 +44,11 @@ public class SpawnWeapon : MonoBehaviour
 
     public void Weapon1()
     {
+
         Weapons[currentWeaponID].SetActive(false);
         currentWeaponID = 5;
         Weapons[currentWeaponID].SetActive(true);
+       
     }
     public void Weapon2()
     {
